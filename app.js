@@ -26,6 +26,9 @@ $("#add-animal").on("click", function(event){
 });
 
 $(document.body).on("click", "#animalButton", function(){
+
+	$("#gifs-go-here").empty();
+	
 	var animal = $(this).attr("animalData");
 	var queryURL =  "http://api.giphy.com/v1/gifs/search?q=" +
       animal + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -67,7 +70,7 @@ $(document.body).on("click", "#gif", function(){
     else {
       $(this).attr("src", ($(this).attr("data-still")));
       $(this).attr("data-state", "still"); 
-    }
+    };
 
 });
 
